@@ -19,4 +19,13 @@ Route::get('/', function () {
 
 Auth::routes();
 
+
+Route::post('/push','PushController@store');
+Route::get('/push','PushController@push')->name('push');
+
+
+
+
+
 Route::get('/home', 'HomeController@index')->name('home');
+
