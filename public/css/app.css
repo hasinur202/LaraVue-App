@@ -13100,6 +13100,46 @@ a.text-muted:hover {
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
 }@charset "UTF-8";
 
+.text-blue {
+  color: #3490dc;
+}
+
+.text-indigo {
+  color: #6574cd;
+}
+
+.text-purple {
+  color: #9561e2;
+}
+
+.text-pink {
+  color: #f66d9b;
+}
+
+.text-red {
+  color: #e3342f;
+}
+
+.text-orange {
+  color: #f6993f;
+}
+
+.text-yellow {
+  color: #ffed4a;
+}
+
+.text-green {
+  color: #38c172;
+}
+
+.text-teal {
+  color: #4dc0b5;
+}
+
+.text-cyan {
+  color: #6cb2eb;
+}
+
 /*!
  * Bootstrap v4.5.0 (https://getbootstrap.com/)
  * Copyright 2011-2020 The Bootstrap Authors
@@ -30073,5 +30113,10 @@ readers do not read off random characters that represent icons */
 .fab {
   font-family: "Font Awesome 5 Brands";
   font-weight: 400;
+}
+
+.router-link-exact-active {
+  background-color: #3f51b5;
+  color: #fff !important;
 }
 

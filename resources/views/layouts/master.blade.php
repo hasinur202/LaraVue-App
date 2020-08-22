@@ -16,8 +16,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="/css/app.css">
   
 </head>
-<body class="hold-transition sidebar-mini">
-<div class="wrapper">
+<body class="hold-transition sidebar-mini" >
+<div class="wrapper" id="app">
 
   <!-- Navbar -->
   <nav class="main-header navbar navbar-expand navbar-white navbar-light">
@@ -70,17 +70,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
+            <router-link to="/dashboard" class="nav-link">
+              <i class="nav-icon fas fa-tachometer-alt text-blue"></i>
               <p>
                 Dashboard
               </p>
-            </a>
+            </router-link>
           </li>
+       
 
           <li class="nav-item has-treeview">
-            <a href="#" class="nav-link active">
-              <i class="nav-icon fas fa-cog"></i>
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-cog text-green"></i>
               <p>
                 Management
                 <i class="right fas fa-angle-left"></i>
@@ -88,10 +89,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="#" class="nav-link active">
-                  <i class="fas fa-circle nav-icon"></i>
-                  <p>Active Page</p>
-                </a>
+                <router-link to="/users" class="nav-link">
+                  <i class="fas fa-users nav-icon"></i>
+
+                  <p>Users</p>
+                  
+                </router-link>
               </li>
               <li class="nav-item">
                 <a href="#" class="nav-link">
@@ -104,17 +107,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
           </li>
 
           <li class="nav-item">
-              <a href="#" class="nav-link">
-                <i class="nav-icon fas fa-user"></i>
+              <router-link to="/profile" class="nav-link">
+                <i class="nav-icon fas fa-user text-orange"></i>
                 <p>
                   Profile
                 </p>
-              </a>
+              </router-link>
             </li>
 
             <li class="nav-item">
               <a href="#" class="nav-link" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                <i class="nav-icon fa fa-power-off"></i>
+                <i class="nav-icon fa fa-power-off text-red"></i>
                 <p>
                   Logout
                 </p>
@@ -139,8 +142,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <div class="content">
       <div class="container-fluid">
 
+        <router-view></router-view>
 
-      <a href="{{route('push')}}" class="btn btn-outline-primary btn-block">Make a Push Notification!</a>
+
+      
 
 
       </div><!-- /.container-fluid -->
@@ -163,10 +168,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
 </div>
 <!-- ./wrapper -->
 
-<script src="/js/app.js"></script>
-@auth
-    <script src="{{ asset('js/enable-push.js') }}" defer></script>
-@endauth
+<script src="{{asset('/js/app.js') }}"></script>
+
+
 
 </body>
 </html>
