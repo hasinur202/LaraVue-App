@@ -12,6 +12,23 @@ Vue.component(HasError.name, HasError);
 Vue.component(AlertError.name, AlertError);
 //vform end
 
+import Swal from 'sweetalert2'
+// CommonJS
+const Toast = Swal.mixin({
+  toast: true,
+  position: 'top-end',
+  showConfirmButton: false,
+  timer: 3000,
+  timerProgressBar: true,
+  didOpen: (toast) => {
+    toast.addEventListener('mouseenter', Swal.stopTimer)
+    toast.addEventListener('mouseleave', Swal.resumeTimer)
+  }
+})
+
+window.Toast = Toast;
+
+
 import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
@@ -22,6 +39,7 @@ Vue.use(VueRouter)
 const routes = [
     { path: '/dashboard', component: require('./components/Dashboard.vue').default },
     { path: '/users', component: require('./components/Users.vue').default },
+    { path: '/book', component: require('./components/Book.vue').default },
     { path: '/profile', component: require('./components/Profile.vue').default }
   ]
 
@@ -50,7 +68,7 @@ const routes = [
 
 
 
-// Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+Vue.component('app', require('./components/app.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
