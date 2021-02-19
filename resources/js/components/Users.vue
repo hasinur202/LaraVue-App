@@ -5,14 +5,9 @@
             <div class="card">
               <div class="card-header">
                 <h3 class="card-title">Users Table</h3>
-
-
-
                 <div class="card-tools">
                     <button class="btn btn-success" data-toggle="modal" data-target="#addNew">Add New <i class="fas fa-user-plus fa-fw"></i></button>
                 </div>
-
-
               </div>
               <!-- /.card-header -->
               <div class="card-body table-responsive p-0">
@@ -56,7 +51,7 @@
 
 
 
-        <div class="modal fade" id="addNew" tabindex="-1" role="dialog" aria-labelledby="addNewLabel" aria-hidden="true">
+      <div class="modal fade" id="addNew" tabindex="-1" role="dialog" aria-labelledby="addNewLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
             <div class="modal-header">
@@ -107,7 +102,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Create</button>
+                <button type="submit" class="btn btn-primary">Create</button>
             </div>
             </form>
             </div>
