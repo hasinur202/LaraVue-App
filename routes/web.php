@@ -17,7 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Auth::routes();
+Auth::routes();
 
 
 
@@ -25,14 +25,8 @@ Route::get('/', function () {
 
 
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('{path}', "HomeController@index")->where(['path', '.*-in-.*|stay-in-.*']);
 
-
-//vue route
-Route::post('/storeAuthor', 'BookController@storeAuthor');
-Route::post('/storeBook', 'BookController@storeBook');
-
-Route::get('/searchAuthor', 'BookController@index');
 

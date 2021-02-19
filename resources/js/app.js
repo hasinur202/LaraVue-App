@@ -39,7 +39,6 @@ Vue.use(VueRouter)
 const routes = [
     { path: '/dashboard', component: require('./components/Dashboard.vue').default },
     { path: '/users', component: require('./components/Users.vue').default },
-    { path: '/book', component: require('./components/Book.vue').default },
     { path: '/profile', component: require('./components/Profile.vue').default }
   ]
 
@@ -68,7 +67,7 @@ const routes = [
 
 
 
-Vue.component('app', require('./components/app.vue').default);
+// Vue.component('app', require('./components/app.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
