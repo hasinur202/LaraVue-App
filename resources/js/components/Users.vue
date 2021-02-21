@@ -153,11 +153,13 @@
                 })
 
                 this.$Progress.finish();
+                // this.loadUsers();
             }
         },
 
         created() {
             this.loadUsers();
+            setInterval(()=>this.loadUsers(),3000);
         }
 
 
