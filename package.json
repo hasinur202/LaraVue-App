@@ -32,6 +32,7 @@
         "to": "^0.2.9",
         "update": "^0.7.4",
         "vform": "^1.0.1",
+        "vue-progressbar": "^0.7.5",
         "vue-router": "^3.4.3"
     }
 }
