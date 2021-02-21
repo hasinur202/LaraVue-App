@@ -33,6 +33,11 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
 
+Vue.filter('upText', function(text){
+  return text.charAt(0).toUpperCase() + text.slice(1)
+});
+
+
 
 
 

@@ -42164,7 +42164,7 @@ var render = function() {
                     _vm._v(" "),
                     _c("td", [_vm._v(_vm._s(user.email))]),
                     _vm._v(" "),
-                    _c("td", [_vm._v(_vm._s(user.type))]),
+                    _c("td", [_vm._v(_vm._s(_vm._f("upText")(user.type)))]),
                     _vm._v(" "),
                     _c("td", [_vm._v(_vm._s(user.created_at))]),
                     _vm._v(" "),
@@ -57829,6 +57829,9 @@ var Toast = sweetalert2__WEBPACK_IMPORTED_MODULE_1___default.a.mixin({
 window.Toast = Toast;
 
 Vue.use(vue_router__WEBPACK_IMPORTED_MODULE_2__["default"]);
+Vue.filter('upText', function (text) {
+  return text.charAt(0).toUpperCase() + text.slice(1);
+});
 var routes = [{
   path: '/dashboard',
   component: __webpack_require__(/*! ./components/Dashboard.vue */ "./resources/js/components/Dashboard.vue")["default"]
