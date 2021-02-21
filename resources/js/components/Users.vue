@@ -120,7 +120,6 @@
 
 <script>
     export default {
-
         data() {
           return {
             users : {},
@@ -136,7 +135,6 @@
         },
 
         methods: {
-
           loadUsers(){
                 axios.get("api/user")
                 .then(({ data }) => (
@@ -145,14 +143,24 @@
             },
 
             createUser(){
-                this.$Progress.start()
+                this.$Progress.start();
                 this.form.post('api/user');
-                this.$Progress.finish()
+                $('#addNew').modal('hide');
+
+                Toast.fire({
+                  type: 'success',
+                  title: 'User Created Successfully'
+                })
+
+                this.$Progress.finish();
             }
         },
 
         created() {
             this.loadUsers();
         }
+
+
+
     }
 </script>

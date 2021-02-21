@@ -28,7 +28,7 @@
         "admin-lte": "^3.0.0-alpha.2",
         "moment": "^2.29.1",
         "npm": "^6.14.8",
-        "sweetalert2": "^10.3.2",
+        "sweetalert2": "^10.15.5",
         "to": "^0.2.9",
         "update": "^0.7.4",
         "vform": "^1.0.1",
