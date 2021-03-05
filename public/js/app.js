@@ -2136,6 +2136,7 @@ __webpack_require__.r(__webpack_exports__);
     createUser: function createUser() {
       this.$Progress.start();
       this.form.post('api/user');
+      Fire.$emit('AfterCreate');
       $('#addNew').modal('hide');
       Toast.fire({
         type: 'success',
@@ -2148,9 +2149,9 @@ __webpack_require__.r(__webpack_exports__);
     var _this2 = this;
 
     this.loadUsers();
-    setInterval(function () {
-      return _this2.loadUsers();
-    }, 3000);
+    Fire.$on('AfterCreate', function () {
+      _this2.loadUsers();
+    }); // setInterval(()=>this.loadUsers(),3000);
   }
 });
 
@@ -79752,6 +79753,7 @@ Vue.use(vue_progressbar__WEBPACK_IMPORTED_MODULE_4___default.a, {
   failedColor: 'red',
   height: '3px'
 });
+window.Fire = new Vue();
 var routes = [{
   path: '/dashboard',
   component: __webpack_require__(/*! ./components/Dashboard.vue */ "./resources/js/components/Dashboard.vue")["default"]

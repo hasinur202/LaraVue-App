@@ -52,6 +52,7 @@ Vue.use(VueProgressBar, {
   })
 
 
+window.Fire =  new Vue();
 
 
   
