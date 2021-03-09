@@ -32,7 +32,7 @@
                       <td>{{user.type | upText }}</td>
                       <td>{{user.created_at | myDate }}</td>
                       <td>
-                            <a class="btn btn-info btn-sm"><i class="fa fa-edit"></i></a>
+                            <a @click="editUser(user)" class="btn btn-info btn-sm"><i class="fa fa-edit"></i></a>
 
                             <a @click="deleteUser(user.id)" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
 
@@ -131,11 +131,17 @@
         },
 
         methods: {
+          editUser(user){
+            this.form.reset();
+            $('#addNew').modal('show');
+            this.form.fill(user);
+          },
+          
           newModal(){
             this.form.reset();
             $('#addNew').modal('show');
           },
-          
+
           deleteUser(id){
               Swal.fire({
                 title: 'Are you sure?',
