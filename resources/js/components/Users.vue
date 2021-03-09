@@ -123,6 +123,7 @@
             editmode:false,
             users : {},
             form: new Form({
+                id:'',
                 name: '',
                 email: '',
                 bio:'',
@@ -134,8 +135,24 @@
         },
 
         methods: {
-          updateUser(){
-            console.log('editing Data');
+          updateUser(id){
+            this.$Progress.start();
+                // console.log('Editing data');
+                this.form.put('api/user/'+this.form.id)
+                .then(() => {
+                    // success
+                    $('#addNew').modal('hide');
+                    Toast.fire({
+                      type: 'success',
+                      title: 'User Updated Successfully'
+                    })
+
+                    this.$Progress.finish();
+                    Fire.$emit('AfterCreate');
+                })
+                .catch(() => {
+                    this.$Progress.fail();
+                });
 
           },
           editUser(user){
