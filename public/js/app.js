@@ -2135,13 +2135,14 @@ __webpack_require__.r(__webpack_exports__);
     },
     createUser: function createUser() {
       this.$Progress.start();
-      this.form.post('api/user');
-      Fire.$emit('AfterCreate');
-      $('#addNew').modal('hide');
-      Toast.fire({
-        type: 'success',
-        title: 'User Created Successfully'
-      });
+      this.form.post('api/user').then(function () {
+        Fire.$emit('AfterCreate');
+        $('#addNew').modal('hide');
+        Toast.fire({
+          type: 'success',
+          title: 'User Created Successfully'
+        });
+      })["catch"](function () {});
       this.$Progress.finish(); // this.loadUsers();
     }
   },
@@ -80064,8 +80065,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\ALL PROJECT\laraVue\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! D:\ALL PROJECT\laraVue\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! E:\ALL PROJECT\laraVue\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! E:\ALL PROJECT\laraVue\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
