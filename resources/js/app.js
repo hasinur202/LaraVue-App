@@ -15,6 +15,7 @@ Vue.component(AlertError.name, AlertError);
 //vform end
 
 import Swal from 'sweetalert2'
+window.Swal = Swal;
 // CommonJS
 const Toast = Swal.mixin({
   toast: true,
