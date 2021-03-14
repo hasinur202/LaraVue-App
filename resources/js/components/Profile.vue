@@ -78,7 +78,7 @@
 
                                 <div class="form-group">
                                     <div class="col-sm-offset-2 col-sm-12">
-                                    <button type="submit" class="btn btn-success">Update</button>
+                                        <button @click.prevent="updateInfo" type="submit" class="btn btn-success">Update</button>
                                     </div>
                                 </div>
                                 </form>
@@ -115,6 +115,23 @@
         },
 
         methods:{
+
+            updateInfo(){
+                this.$Progress.start();
+                if(this.form.password == ''){
+                    this.form.password = undefined;
+                }
+                this.form.put('api/profile')
+                .then(()=>{
+                     Fire.$emit('AfterCreate');
+                    this.$Progress.finish();
+                })
+                .catch(() => {
+                    this.$Progress.fail();
+                });
+            },
+
+            
             updateProfile(e){
                 let file = e.target.files[0];
                 let reader = new FileReader();
