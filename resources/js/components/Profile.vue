@@ -42,7 +42,7 @@
                                         <label for="inputName" class="col-sm-2 control-label">Name</label>
 
                                         <div class="col-sm-12">
-                                        <input type="" v-model="form.name" class="form-control" id="inputName" placeholder="Name" :class="{ 'is-invalid': form.errors.has('name') }">
+                                        <input type="text" v-model="form.name" class="form-control" id="inputName" placeholder="Name" :class="{ 'is-invalid': form.errors.has('name') }">
                                         <has-error :form="form" field="name"></has-error>
                                         </div>
                                     </div>

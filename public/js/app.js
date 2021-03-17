@@ -64885,7 +64885,7 @@ var render = function() {
                               "is-invalid": _vm.form.errors.has("name")
                             },
                             attrs: {
-                              type: "",
+                              type: "text",
                               id: "inputName",
                               placeholder: "Name"
                             },
