@@ -71,7 +71,7 @@
 
                                     </div>
 
-                                    <div class="form-group">
+                                    <!-- <div class="form-group">
                                         <label for="password" class="col-sm-12 control-label">Passport (leave empty if not changing)</label>
 
                                         <div class="col-sm-12">
@@ -84,7 +84,7 @@
                                         >
                                         <has-error :form="form" field="password"></has-error>
                                         </div>
-                                    </div>
+                                    </div> -->
 
                                     <div class="form-group">
                                         <div class="col-sm-offset-2 col-sm-12">
@@ -113,7 +113,7 @@
                     id:'',
                     name : '',
                     email: '',
-                    password: '',
+                    // password: '',
                     type: '',
                     bio: '',
                     photo: ''

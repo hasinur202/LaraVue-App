@@ -57,12 +57,14 @@ class UserController extends Controller
 
     public function updateProfile(Request $request)
     {
+        // dd($request->all());
+
         $user = auth('api')->user();
 
         $this->validate($request,[
             'name' => 'required|string|max:191',
             'email' => 'required|string|email|max:191|unique:users,email,'.$user->id,
-            'password' => 'sometimes|required|min:6'
+            // 'password' => 'sometimes|required|min:6'
         ]);
 
 
@@ -81,12 +83,21 @@ class UserController extends Controller
 
         }
 
-        if(!empty($request->password)){
-            $request->merge(['password' => Hash::make($request['password'])]);
-        }
+        // if(!empty($request->password)){
+        //     $request->merge(['password' => Hash::make($request['password'])]);
+        // }
+
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->photo = $request->photo;
+        $user->bio = $request->bio;
+        // $user->password = $request->password;
+
+        $user->save();
 
 
-        $user->update($request->all());
+        // $user->update($request->all());
+
         return ['message' => "Success"];
 
     }

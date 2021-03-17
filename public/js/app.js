@@ -2072,7 +2072,7 @@ __webpack_require__.r(__webpack_exports__);
         id: '',
         name: '',
         email: '',
-        password: '',
+        // password: '',
         type: '',
         bio: '',
         photo: ''
@@ -65024,61 +65024,6 @@ var render = function() {
                           on: { change: _vm.updateProfile }
                         })
                       ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "form-group" }, [
-                      _c(
-                        "label",
-                        {
-                          staticClass: "col-sm-12 control-label",
-                          attrs: { for: "password" }
-                        },
-                        [_vm._v("Passport (leave empty if not changing)")]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "div",
-                        { staticClass: "col-sm-12" },
-                        [
-                          _c("input", {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: _vm.form.password,
-                                expression: "form.password"
-                              }
-                            ],
-                            staticClass: "form-control",
-                            class: {
-                              "is-invalid": _vm.form.errors.has("password")
-                            },
-                            attrs: {
-                              type: "password",
-                              id: "password",
-                              placeholder: "Passport"
-                            },
-                            domProps: { value: _vm.form.password },
-                            on: {
-                              input: function($event) {
-                                if ($event.target.composing) {
-                                  return
-                                }
-                                _vm.$set(
-                                  _vm.form,
-                                  "password",
-                                  $event.target.value
-                                )
-                              }
-                            }
-                          }),
-                          _vm._v(" "),
-                          _c("has-error", {
-                            attrs: { form: _vm.form, field: "password" }
-                          })
-                        ],
-                        1
-                      )
                     ]),
                     _vm._v(" "),
                     _c("div", { staticClass: "form-group" }, [
