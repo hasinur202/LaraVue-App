@@ -133,6 +133,11 @@
                 }
                 this.form.put('api/profile')
                 .then(()=>{
+                    Toast.fire({
+                      type: 'success',
+                      title: 'Profile Updated Successfully'
+                    })
+
                      Fire.$emit('AfterCreate');
                     this.$Progress.finish();
                 })
