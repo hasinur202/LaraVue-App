@@ -2095,9 +2095,14 @@ __webpack_require__.r(__webpack_exports__);
 
       var file = e.target.files[0];
       var reader = new FileReader();
+      var limit = 1024 * 1024 * 2;
+
+      if (file['size'] > limit) {
+        Swal.fire('Oops...!', 'You are uploading a large file', 'error');
+        return false;
+      }
 
       reader.onloadend = function (file) {
-        console.log('RESULT', reader.result);
         _this2.form.photo = reader.result;
       };
 

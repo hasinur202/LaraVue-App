@@ -135,9 +135,16 @@
             updateProfile(e){
                 let file = e.target.files[0];
                 let reader = new FileReader();
-
+                let limit = 1024 * 1024 * 2;
+                if(file['size'] > limit){
+                    Swal.fire(
+                        'Oops...!',
+                        'You are uploading a large file',
+                        'error'
+                      )
+                    return false;
+                }
                 reader.onloadend = (file) => {
-                    console.log('RESULT', reader.result)
                     this.form.photo = reader.result;
                 }
                 reader.readAsDataURL(file);
