@@ -2065,6 +2065,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2083,6 +2086,10 @@ __webpack_require__.r(__webpack_exports__);
     console.log('Component mounted.');
   },
   methods: {
+    getProfilePhoto: function getProfilePhoto() {
+      var photo = "img/profile/" + this.form.photo;
+      return photo;
+    },
     updateInfo: function updateInfo() {
       var _this = this;
 
@@ -64843,7 +64850,19 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
     _c("div", { staticClass: "row justify-content-center" }, [
-      _vm._m(0),
+      _c("div", { staticClass: "col-md-12 mt-3" }, [
+        _c("div", { staticClass: "card card-widget widget-user" }, [
+          _vm._m(0),
+          _vm._v(" "),
+          _c("div", { staticClass: "widget-user-image" }, [
+            _c("img", {
+              staticClass: "img-circle",
+              staticStyle: { height: "90px !important" },
+              attrs: { src: _vm.getProfilePhoto(), alt: "User Avatar" }
+            })
+          ])
+        ])
+      ]),
       _vm._v(" "),
       _c("div", { staticClass: "col-md-12" }, [
         _c("div", { staticClass: "card" }, [
@@ -65063,26 +65082,22 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-md-12 mt-3" }, [
-      _c("div", { staticClass: "card card-widget widget-user" }, [
-        _c(
-          "div",
-          {
-            staticClass: "widget-user-header text-white",
-            staticStyle: { "background-image": "url('./img/photo1.png')" }
-          },
-          [
-            _c("h3", { staticClass: "widget-user-username text-right" }, [
-              _vm._v("Elizabeth Pierce")
-            ]),
-            _vm._v(" "),
-            _c("h5", { staticClass: "widget-user-desc text-right" }, [
-              _vm._v("Web Designer")
-            ])
-          ]
-        )
-      ])
-    ])
+    return _c(
+      "div",
+      {
+        staticClass: "widget-user-header text-white",
+        staticStyle: { "background-image": "url('./img/photo1.png')" }
+      },
+      [
+        _c("h3", { staticClass: "widget-user-username text-right" }, [
+          _vm._v("Elizabeth Pierce")
+        ]),
+        _vm._v(" "),
+        _c("h5", { staticClass: "widget-user-desc text-right" }, [
+          _vm._v("Web Designer")
+        ])
+      ]
+    )
   },
   function() {
     var _vm = this
