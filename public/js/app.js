@@ -2100,6 +2100,7 @@ __webpack_require__.r(__webpack_exports__);
       }
 
       this.form.put('api/profile').then(function () {
+        Fire.$emit('loadPage');
         Toast.fire({
           type: 'success',
           title: 'Profile Updated Successfully'
@@ -2128,14 +2129,22 @@ __webpack_require__.r(__webpack_exports__);
       };
 
       reader.readAsDataURL(file);
+    },
+    loadProfile: function loadProfile() {
+      var _this3 = this;
+
+      axios.get("api/profile").then(function (_ref) {
+        var data = _ref.data;
+        return _this3.form.fill(data);
+      });
     }
   },
   created: function created() {
-    var _this3 = this;
+    var _this4 = this;
 
-    axios.get("api/profile").then(function (_ref) {
-      var data = _ref.data;
-      return _this3.form.fill(data);
+    this.loadProfile();
+    Fire.$on('loadPage', function () {
+      _this4.loadProfile();
     });
   }
 });

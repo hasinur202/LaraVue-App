@@ -140,6 +140,7 @@
                 }
                 this.form.put('api/profile')
                 .then(()=>{
+                    Fire.$emit('loadPage');
                     Toast.fire({
                       type: 'success',
                       title: 'Profile Updated Successfully'
@@ -170,12 +171,20 @@
                     this.form.photo = reader.result;
                 }
                 reader.readAsDataURL(file);
-            }
+            },
+
+            loadProfile(){
+                axios.get("api/profile")
+                .then(({ data }) => (this.form.fill(data)));
+            },
+            
         },
 
         created() {
-            axios.get("api/profile")
-            .then(({ data }) => (this.form.fill(data)));
+            this.loadProfile();
+            Fire.$on('loadPage',() => {
+                this.loadProfile();
+            });
         }
     }
 </script>
