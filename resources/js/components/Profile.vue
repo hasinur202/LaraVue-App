@@ -129,7 +129,7 @@
 
         methods:{
             getProfilePhoto(){
-                let photo = "img/profile/"+ this.form.photo;
+                let photo = (this.form.photo.length > 200) ? this.form.photo : "img/profile/"+ this.form.photo ;
                 return photo;
             },
 
@@ -177,7 +177,7 @@
                 axios.get("api/profile")
                 .then(({ data }) => (this.form.fill(data)));
             },
-            
+
         },
 
         created() {
