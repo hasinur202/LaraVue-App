@@ -2341,7 +2341,7 @@ __webpack_require__.r(__webpack_exports__);
             Swal.fire('Deleted!', 'Your file has been deleted.', 'success');
             Fire.$emit('AfterCreate');
           })["catch"](function () {
-            Swal("Failed!", "There was something wronge.", "warning");
+            Swal.fire("Failed!", "There was something wronge.", "warning");
           });
         }
       });

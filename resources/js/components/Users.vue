@@ -188,7 +188,7 @@
                       Fire.$emit('AfterCreate');
 
                     }).catch(()=> {
-                        Swal("Failed!", "There was something wronge.", "warning");
+                        Swal.fire("Failed!", "There was something wronge.", "warning");
                     });
                 }
               })
