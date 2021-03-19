@@ -14,6 +14,12 @@ Vue.component(HasError.name, HasError);
 Vue.component(AlertError.name, AlertError);
 //vform end
 
+
+import Gate from "./Gate";
+Vue.prototype.$gate = new Gate(window.user);
+
+
+
 import Swal from 'sweetalert2'
 window.Swal = Swal;
 // CommonJS
