@@ -62,6 +62,8 @@ Vue.use(VueProgressBar, {
 window.Fire =  new Vue();
 
 
+Vue.component('not-found', require('./components/NotFound.vue').default);
+
   
 const routes = [
     { path: '/dashboard', component: require('./components/Dashboard.vue').default },

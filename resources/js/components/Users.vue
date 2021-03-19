@@ -47,6 +47,10 @@
             <!-- /.card -->
           </div>
         </div>
+
+        <div v-if="!$gate.isAdminOrAuthor()">
+            <not-found></not-found>
+        </div>
     
 
 
