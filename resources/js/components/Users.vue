@@ -176,6 +176,7 @@
           },
 
           newModal(){
+            this.editmode = false;
             this.form.reset();
             $('#addNew').modal('show');
           },

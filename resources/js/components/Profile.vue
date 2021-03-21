@@ -15,8 +15,8 @@
             <div class="col-md-12 mt-3">
                 <div class="card card-widget widget-user">
                     <div class="widget-user-header text-white" style="background-image:url('./img/photo1.png')">
-                        <h3 class="widget-user-username text-right">Elizabeth Pierce</h3>
-                        <h5 class="widget-user-desc text-right">Web Designer</h5>
+                        <h3 class="widget-user-username text-right">{{ this.form.name }}</h3>
+                        <h5 class="widget-user-desc text-right">{{ this.form.type }}</h5>
                     </div>
                     <div class="widget-user-image">
                         <img class="img-circle" :src="getProfilePhoto()" alt="User Avatar" style="height:90px !important">
