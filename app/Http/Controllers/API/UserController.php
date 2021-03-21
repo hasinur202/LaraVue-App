@@ -23,10 +23,10 @@ class UserController extends Controller
      */
     public function index()
     {
-        // if (\Gate::allows('isAdmin') || \Gate::allows('isAuthor')) {
-            // return User::latest()->paginate(5);
-            return User::all();
-        // }
+        if (\Gate::allows('isAdmin') || \Gate::allows('isAuthor')) {
+            return User::latest()->paginate(5);
+            // return User::all();
+        }
     }
 
     /**

@@ -61,6 +61,9 @@ Vue.use(VueProgressBar, {
 
 window.Fire =  new Vue();
 
+Vue.component('pagination', require('laravel-vue-pagination'));
+
+
 
 Vue.component('not-found', require('./components/NotFound.vue').default);
 
