@@ -76,17 +76,11 @@ const routes = [
     { path: '*', component: require('./components/NotFound.vue').default }
   ]
 
-  
-  
   const router = new VueRouter({
     mode: 'history',
-    routes
+    routes // short for `routes: routes`
   })
-
-
-
-
-
+    
 
 /**
  * The following block of code may be used to automatically register your
@@ -111,7 +105,16 @@ const routes = [
 
 const app = new Vue({
     el: '#app',
-    router
+    router,
+    data:{
+      search: ''
+  },
+  methods:{
+    searchit: _.debounce(() => {
+        Fire.$emit('searching');
+    },1000),
+
+  }
 }).$mount('#app');
 
 

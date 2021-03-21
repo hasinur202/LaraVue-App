@@ -26,22 +26,19 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
       </li>
     </ul>
-    
-    <!-- SEARCH FORM -->
-    <!-- <form class="form-inline ml-3">
-      <div class="input-group input-group-sm">
-        <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
+
+      <div class="input-group input-group-sm" style="width: 30%;">
+        <input class="form-control form-control-navbar" @keyup="searchit" v-model="search" type="search" placeholder="Search" aria-label="Search">
         <div class="input-group-append">
-          <button class="btn btn-navbar" type="submit">
-            <i class="fas fa-search"></i>
+          <button class="btn btn-navbar" @click="searchit">
+            <i class="fa fa-search"></i>
           </button>
         </div>
       </div>
-    </form>
-    -->
-
+ 
+    
+   
     <ul class="navbar-nav ml-auto">
-
       <li class="nav-item dropdown">
         <a class="nav-link" data-toggle="dropdown" href="#">
           <i class="nav-icon fa fa-power-off red"></i>

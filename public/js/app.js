@@ -2375,7 +2375,7 @@ __webpack_require__.r(__webpack_exports__);
             Swal.fire('Deleted!', 'Your file has been deleted.', 'success');
             Fire.$emit('AfterCreate');
           })["catch"](function () {
-            Swal.fire("Failed!", "There was something wronge.", "warning");
+            Swal.fire("Failed!", "There was something wrong.", "warning");
           });
         }
       });
@@ -2406,6 +2406,14 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {
     var _this5 = this;
 
+    Fire.$on('searching', function () {
+      var query = _this5.$parent.search;
+      axios.get('api/findUser?q=' + query).then(function (data) {
+        _this5.users = data.data;
+      })["catch"](function () {
+        Swal.fire("Failed!", "There was something wrong.", "warning");
+      });
+    });
     this.loadUsers();
     Fire.$on('AfterCreate', function () {
       _this5.loadUsers();
@@ -83394,7 +83402,8 @@ var routes = [{
 }];
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_4__["default"]({
   mode: 'history',
-  routes: routes
+  routes: routes // short for `routes: routes`
+
 });
 /**
  * The following block of code may be used to automatically register your
@@ -83415,7 +83424,15 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_4__["default"]({
 
 var app = new Vue({
   el: '#app',
-  router: router
+  router: router,
+  data: {
+    search: ''
+  },
+  methods: {
+    searchit: _.debounce(function () {
+      Fire.$emit('searching');
+    }, 1000)
+  }
 }).$mount('#app');
 
 /***/ }),

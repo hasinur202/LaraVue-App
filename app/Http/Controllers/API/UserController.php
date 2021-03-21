@@ -67,9 +67,7 @@ class UserController extends Controller
             // 'password' => 'sometimes|required|min:6'
         ]);
 
-
         $currentPhoto = $user->photo;
-
         if($request->photo != $currentPhoto){
             $name = time().'.' . explode('/', explode(':', substr($request->photo, 0, strpos($request->photo, ';')))[1])[1];
 
@@ -92,12 +90,8 @@ class UserController extends Controller
         $user->photo = $request->photo;
         $user->bio = $request->bio;
         // $user->password = $request->password;
-
         $user->save();
-
-
         // $user->update($request->all());
-
         return ['message' => "Success"];
 
     }
@@ -154,5 +148,19 @@ class UserController extends Controller
     public function profile()
     {
         return auth('api')->user();
+    }
+
+    public function search(){
+        if ($search = \Request::get('q')) {
+            $users = User::where(function($query) use ($search){
+                $query->where('name','LIKE',"%$search%")
+                        ->orWhere('email','LIKE',"%$search%");
+            })->paginate(10);
+        }else{
+            $users = User::latest()->paginate(5);
+        }
+
+        return $users;
+
     }
 }
