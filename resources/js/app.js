@@ -114,6 +114,9 @@ const app = new Vue({
         Fire.$emit('searching');
     },1000),
 
+    printme() {
+        window.print();
+    }
   }
 }).$mount('#app');
 
